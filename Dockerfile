@@ -10,4 +10,3 @@ RUN pip install -r requirements.txt
 COPY . /app/
 
 EXPOSE  4567
-CMD     ["python", "main.py", "dev"]

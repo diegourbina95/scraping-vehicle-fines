@@ -118,7 +118,7 @@ class TestUntitled():
                 cols = row.find_all('td')
                 print(cols)
                 print("tabla5", len(cols))
-                if len(cols) == 15:
+                if len(cols) == 16:
                     print("tabla6")
                     cols = [ele.text.strip() for ele in cols]
                     l2 = ["nro", "placa", "reglamento", "falta", "documentoCodigoPago",

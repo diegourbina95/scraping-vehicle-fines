@@ -559,11 +559,12 @@ def multasLimaDoc():
             except:
                 print("ERROR, NO SE ABRIO CON AWS")
                 webdrivertipo = os.getenv('WEBDRIVER')
-        resultadoMongo = BuscarUltimoRegistro('LimaDocumento', { "documento": json['documento']})
+        # resultadoMongo = BuscarUltimoRegistro('LimaDocumento', { "documento": json['documento']})
+        resultadoMongo = None
         print("resultadoMongo", resultadoMongo)
-        getFecha = loads(resultadoMongo)
-        print(getFecha)
-        global created
+        # getFecha = loads(resultadoMongo)
+        # print(getFecha)
+        # global created
         try:
             created = diferenviaDias(getFecha['created_at'])
         except:
@@ -576,7 +577,7 @@ def multasLimaDoc():
             print("result")
             print(result)
             print("result")
-            insertarMongo(result, 'LimaDocumento' )
+            # insertarMongo(result, 'LimaDocumento' )
             return dumps(result)
         else:
             return resultadoMongo

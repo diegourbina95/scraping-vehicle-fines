@@ -57,5 +57,6 @@ venv/
 .venv/
 
 .idea/
-
-.env*
+.env
+.env.dev
+.env.prod

@@ -1,0 +1,185 @@
+{
+  "id": "4178a383-a307-45ed-986a-da08847509aa",
+  "version": "2.0",
+  "name": "Lima",
+  "url": "https://www.sat.gob.pe/",
+  "tests": [{
+    "id": "7d36d7c8-ea90-436e-9be3-08e02dd64d75",
+    "name": "Untitled",
+    "commands": [{
+      "id": "35e99a23-7b33-474f-bcc6-9898a68057bd",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.sat.gob.pe/Websitev9",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "74a17209-0d24-4dc5-a2ba-c0770ebc10d5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "355ab88f-d5c4-4dc5-b583-b6fb0511a718",
+      "comment": "",
+      "command": "click",
+      "target": "id=txtPlaca",
+      "targets": [
+        ["id=txtPlaca", "id"],
+        ["css=#txtPlaca", "css:finder"],
+        ["xpath=//input[@id='txtPlaca']", "xpath:attributes"],
+        ["xpath=//div[@id='seccionServicios']/div/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1ae1adf-f092-4e1f-bbbc-1d29fc0888e4",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtPlaca",
+      "targets": [
+        ["id=txtPlaca", "id"],
+        ["css=#txtPlaca", "css:finder"],
+        ["xpath=//input[@id='txtPlaca']", "xpath:attributes"],
+        ["xpath=//div[@id='seccionServicios']/div/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "D8L108"
+    }, {
+      "id": "69e0fa86-d188-40e6-8efe-1097e2c69798",
+      "comment": "",
+      "command": "click",
+      "target": "css=#papeletas > .fa",
+      "targets": [
+        ["css=#papeletas > .fa", "css:finder"],
+        ["xpath=//span[@id='papeletas']/em", "xpath:idRelative"],
+        ["xpath=//span/em", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win3370",
+      "windowTimeout": 2000
+    }, {
+      "id": "e416e55c-3d83-44cc-ac12-13fb0fcd13c9",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2409457-8f73-45f9-88b1-2537d60b6ab9",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win3370}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "792a93d9-bff8-4b51-a19d-66becd87c1d8",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "daca2c88-1aa2-440f-beef-9e3d7dfc38ec",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "947640c2-67f7-4014-9821-b02de80348fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.recaptcha-checkbox-border",
+      "targets": [
+        ["css=.recaptcha-checkbox-border", "css:finder"],
+        ["xpath=//span[@id='recaptcha-anchor']/div", "xpath:idRelative"],
+        ["xpath=//span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9c5c0d4-e949-4f50-94ba-13b1519ef3fb",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "57b778de-8c72-4cc7-b7ff-ae73b1e51506",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_cplPrincipal_CaptchaContinue",
+      "targets": [
+        ["id=ctl00_cplPrincipal_CaptchaContinue", "id"],
+        ["name=ctl00$cplPrincipal$CaptchaContinue", "name"],
+        ["css=#ctl00_cplPrincipal_CaptchaContinue", "css:finder"],
+        ["xpath=//input[@id='ctl00_cplPrincipal_CaptchaContinue']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_cplPrincipal_divCaptchaPapeletas']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "187b89f0-19b3-499a-9c27-3a33c4409b41",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=ctl00_cplPrincipal_CaptchaContinue",
+      "targets": [
+        ["id=ctl00_cplPrincipal_CaptchaContinue", "id"],
+        ["name=ctl00$cplPrincipal$CaptchaContinue", "name"],
+        ["css=#ctl00_cplPrincipal_CaptchaContinue", "css:finder"],
+        ["xpath=//input[@id='ctl00_cplPrincipal_CaptchaContinue']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_cplPrincipal_divCaptchaPapeletas']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "44f5c2ac-eab4-41f7-8da8-62777be3f9ed",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_cplPrincipal_CaptchaContinue",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3cf6fe91-d75a-4259-9d17-cee193cc7517",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnPrint",
+      "targets": [
+        ["id=btnPrint", "id"],
+        ["css=#btnPrint", "css:finder"],
+        ["xpath=//input[@id='btnPrint']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_cplPrincipal_fecConsulta']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win8689",
+      "windowTimeout": 2000
+    }, {
+      "id": "54afe574-7db1-4d27-aa77-a8db1e64263b",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win8689}",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9de1bbd8-e229-4170-be9f-8c3582ce9220",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7d36d7c8-ea90-436e-9be3-08e02dd64d75"]
+  }],
+  "urls": ["https://www.sat.gob.pe/"],
+  "plugins": []
+}

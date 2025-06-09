@@ -27,7 +27,7 @@ services:
       - ./mongo-init:/docker-entrypoint-initdb.d:ro
   scraper-papeletas:
     build:
-      context: .
+      context: ./scrapers
       dockerfile: Dockerfile
     depends_on:
       - chrome
@@ -35,6 +35,15 @@ services:
     command: ["python", "main.py", "dev"]
     ports:
       - "4567:4567"
+  mcp-server:
+    build:
+      context: ./mcp-server
+      dockerfile: Dockerfile
+    depends_on:
+      - scraper-papeletas
+    command: ["python", "main.py"]
+    ports:
+      - "4200:4200"
 volumes:
   mongodb_data:
     driver: local

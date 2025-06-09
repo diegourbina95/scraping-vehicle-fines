@@ -168,7 +168,6 @@ def find(tipo):
 def home_page():
     return json.dumps('Scrapper Impuesto Vehicular')
 
-
 # Nuevo 2020-11
 @app.route('/multast/<int:tipo>', methods=['POST'])
 def multast(tipo):
@@ -204,7 +203,6 @@ def multast(tipo):
     else:
         return 'Tipo incorrecto'
         # return todas(json_forma)
-
 
 # Nuevo 2020-11
 @app.route('/ivdocumento/<int:tipo>', methods=['POST'])
@@ -302,11 +300,10 @@ def multas(tipo):
                         print("ERROR, NO SE ABRIO CON AWS")
                         webdrivertipo = os.getenv('WEBDRIVER')
                         
-                # buscar = BuscarUltimoRegistro("impuestoV", { "placa": json['placa'].upper()})
-                buscar = None
-                # getFecha = loads(buscar)
-                # print(getFecha)
-                # global created
+                buscar = BuscarUltimoRegistro("impuestoV", { "placa": json['placa'].upper()})
+                getFecha = loads(buscar)
+                print(getFecha)
+                global created
                 
                 try:
                     created = diferenviaDias(getFecha['created_at'])
@@ -379,7 +376,7 @@ def multas(tipo):
                     "contribuyentes": "null",
                     "codigoArchivo": "null"
                 }
-                #                 # InsertarMongo(response)
+                InsertarMongo(response)
                 return dumps(response)
     elif tipo == 2:
         if request.method == 'POST':
@@ -396,13 +393,11 @@ def multas(tipo):
                 }
                 logging.debug("aqui va el nuevo response {}".format(jsonResponse))
                 logging.debug(NameError)
-                # InsertarMongo(jsonResponse)
+                InsertarMongo(jsonResponse)
                 return jsonResponse
     else:
         return 'Tipo incorrecto'
         # return todas(json_forma)
-
-
 
 @app.route('/impuestovehicular/v2/<int:tipo>', methods=['POST'])
 def impuestovehicularv2(tipo):
@@ -424,11 +419,10 @@ def impuestovehicularv2(tipo):
                         print("ERROR, NO SE ABRIO CON AWS")
                         webdrivertipo = os.getenv('webdriver')
                         
-                # buscar = BuscarUltimoRegistro("impuestoVehicularv2", { "placa": json['placa'].upper()})
-                buscar = None
-                # getFecha = loads(buscar)
-                # print(getFecha)
-                # global created
+                buscar = BuscarUltimoRegistro("impuestoVehicularv2", { "placa": json['placa'].upper()})
+                getFecha = loads(buscar)
+                print(getFecha)
+                global created
                 
                 try:
                     created = diferenviaDias(getFecha['created_at'])
@@ -453,7 +447,7 @@ def impuestovehicularv2(tipo):
                     "contribuyentes": "null",
                     "codigoArchivo": "null"
                 }
-                #                 # InsertarMongo(response)
+                InsertarMongo(response)
                 return dumps(response)
     elif tipo == 2:
         if request.method == 'POST':
@@ -470,17 +464,11 @@ def impuestovehicularv2(tipo):
                 }
                 logging.debug("aqui va el nuevo response {}".format(jsonResponse))
                 logging.debug(NameError)
-                # InsertarMongo(jsonResponse)
+                InsertarMongo(jsonResponse)
                 return jsonResponse
     else:
         return 'Tipo incorrecto'
         # return todas(json_forma)
-
-
-
-
-
-
 
 @app.route('/ms/scrappers/v2.0/papeletas/lima', methods=['POST'])
 def multasLima():
@@ -501,15 +489,13 @@ def multasLima():
                 webdrivertipo = os.getenv('WEBDRIVER')
         
 
-        # print("buscar", ip)
-        # buscar = BuscarUltimoRegistro("Lima", { "placa": json['placa'].upper()})
-        # print("sssssss", buscar)
-        # getFecha = loads(buscar)
-        # print(getFecha)
-        # global created
-
-        buscar = None
-        
+        print("buscar", ip)
+        buscar = BuscarUltimoRegistro("Lima", { "placa": json['placa'].upper()})
+        print("sssssss", buscar)
+        getFecha = loads(buscar)
+        print(getFecha)
+        global created
+               
         try:
             created = diferenviaDias(getFecha['created_at'])
         except:
@@ -521,9 +507,9 @@ def multasLima():
             print("result")
             print(result)
             print("result")
-            # insertarMongo = conexionesMongo.MongoConect(result)
-            # asd = insertarMongo.InsertarMongoLima()
-            # print(asd)
+            insertarMongo = conexionesMongo.MongoConect(result)
+            asd = insertarMongo.InsertarMongoLima()
+            print(asd)
             return dumps(result)
         else:
             print(buscar)
@@ -540,10 +526,6 @@ def multasLima():
         cerrar.teardown_method()
         return dumps(resultado)
 
-
-
-
-
 @app.route('/ms/scrappers/v2.0/papeletas/lima/documento', methods=['POST'])
 def multasLimaDoc():
     try:
@@ -559,12 +541,11 @@ def multasLimaDoc():
             except:
                 print("ERROR, NO SE ABRIO CON AWS")
                 webdrivertipo = os.getenv('WEBDRIVER')
-        # resultadoMongo = BuscarUltimoRegistro('LimaDocumento', { "documento": json['documento']})
-        resultadoMongo = None
+        resultadoMongo = BuscarUltimoRegistro('LimaDocumento', { "documento": json['documento']})
         print("resultadoMongo", resultadoMongo)
-        # getFecha = loads(resultadoMongo)
-        # print(getFecha)
-        # global created
+        getFecha = loads(resultadoMongo)
+        print(getFecha)
+        global created
         try:
             created = diferenviaDias(getFecha['created_at'])
         except:
@@ -577,7 +558,7 @@ def multasLimaDoc():
             print("result")
             print(result)
             print("result")
-            # insertarMongo(result, 'LimaDocumento' )
+            insertarMongo(result, 'LimaDocumento' )
             return dumps(result)
         else:
             return resultadoMongo

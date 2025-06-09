@@ -16,12 +16,27 @@ services:
     container_name: selenium-hub
     ports:
       - "4444:4444"
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+      - ./mongo-init:/docker-entrypoint-initdb.d:ro
   scraper-papeletas:
     build:
       context: .
       dockerfile: Dockerfile
     depends_on:
       - chrome
+      - mongodb
     command: ["python", "main.py", "dev"]
     ports:
       - "4567:4567"
+volumes:
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local

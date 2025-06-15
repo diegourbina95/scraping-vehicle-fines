@@ -21,6 +21,8 @@ services:
     container_name: mongodb
     ports:
       - "27017:27017"
+    env_file:
+      - .env
     volumes:
       - mongodb_data:/data/db
       - mongodb_config:/data/configdb

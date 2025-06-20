@@ -57,7 +57,7 @@ load_dotenv(dotenv_path=env_path)
 
 if __name__ == "__main__":
     mcp.run(
-        transport="streamable-http",
+        transport="sse",
         host="0.0.0.0",
         port=4200,
         path="/scraping-vehicle-fines",
